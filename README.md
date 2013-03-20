@@ -1,6 +1,10 @@
 # Introduction
 This is an IRC bot built with Django. It uses yardbird as the IRC framework.
 
+Functions:
+- Listen on a channel for links and topic changes
+- Present links, images and videos on the web front-end
+
 # Developing
 This software was developed using python and virtualenv. You should be able to get it running anywhere, provided you can run python. Linux and OSX are probably the easiest options.
 
@@ -39,5 +43,5 @@ Also run the web interface:
 
 # Contributing
 
-Contributing to this project is done by opening pull requests which will be reviewed and merged by the author.
+Contributing to this project is done by opening pull requests which will be reviewed and merged by the author. Please make sure to write and update tests and run the test suite (./manage.py test) before creating a pull request. Contributing documentation is also welcomed.
 

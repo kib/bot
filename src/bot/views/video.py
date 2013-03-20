@@ -25,5 +25,5 @@ def video(request, site=None, url=None):
     else:
         discard()
     nsfw = True if 'nsfw' in m else False
-    video_obj = Video.objects.create(dest_url=url, nsfw=nsfw, posted_channel=c, posted_by=n, message=m, site=site, video_id=v_id)
+    video_obj = Video.objects.create(dest_url=url, nsfw=nsfw, posted_channel=c, posted_by=n, message=m, site=site, video_id=v_id, title=title)
     return IRCResponse(c,'Video: {0} [{1}]'.format(title, duration_s))

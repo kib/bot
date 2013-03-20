@@ -163,3 +163,5 @@ TEST_RUNNER = 'django_nose.NoseTestSuiteRunner'
 IRC_CHANNELS = (
  'irc://birdtest@irc.klauwd.com/#test',
  )
+
+DEBUG_CHANNEL = '#test'

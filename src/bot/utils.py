@@ -1,5 +1,6 @@
 from urlparse import parse_qs, urlparse
 import re
+from yardbird.irc import IRCResponse
 
 def parse_request(request):
     '''Returns some basic properties of the request'''
@@ -29,7 +30,6 @@ def parse_youtube_url(url_obj):
     qs = parse_qs(url_obj.query)
     path = url_obj.path
     fragment = url_obj.fragment
-    print path
     if 'v' in qs.keys():
         # Easy case: url contains ?v=<id>
         return qs['v'][0]
@@ -45,3 +45,5 @@ def parse_youtube_url(url_obj):
     if match:
         return match.group('video_id')
     
+def discard():
+    return IRCResponse(None, None, method='QUIET')

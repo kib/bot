@@ -6,9 +6,9 @@ urlpatterns = patterns('',
     # Index view (templated)
     url(r'^$', 'viewer.views.index', name='index'),
     # Images view (templated)
-    url(r'^images$', 'viewer.views.images', name='images'),
+    url(r'^images(/(?P<nsfw>))?$', 'viewer.views.images', name='images'),
     # Youtube view (templated)
-    url(r'^youtube$', 'viewer.views.youtube', name='youtube'),
+    url(r'^youtube(/(?P<nsfw>))?$', 'viewer.views.youtube', name='youtube'),
     # single image view
     url(r'^image/(?P<pk>)', 'viewer.views.image', name='image'),
 )

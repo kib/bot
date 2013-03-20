@@ -17,11 +17,11 @@ class Image(BaseLink):
     content_type = models.CharField(max_length=255)
 
     def __unicode__(self):
-        return '<Image: {0}>'.format(self.dest_url)
+        return u'<Image: {0}>'.format(self.dest_url)
 
 class Link(BaseLink):
     def __unicode__(self):
-        return '<Link: {0}>'.format(self.dest_url)
+        return u'<Link: {0}>'.format(self.dest_url)
 
 class Video(BaseLink):
     _site_choices = (('Y', 'Youtube'), ('V', 'Vimeo'))
@@ -30,7 +30,7 @@ class Video(BaseLink):
     title = models.CharField(max_length=255)
 
     def __unicode__(self):
-        return '<Video: {0}>'.format(self.title)
+        return u'<Video: {0}>'.format(self.title)
 
 class Topic(models.Model):
     '''Keeps topic history'''

@@ -7,3 +7,4 @@ pyOpenSSL==0.13
 pysqlite==2.6.3
 -e bzr+http://bazaar.launchpad.net/~spacehobo/yardbird/trunk/@180#egg=yardbird-0.9_Anthropology-py2.7-dev_r180
 django-nose==1.1
+gdata==2.0.17

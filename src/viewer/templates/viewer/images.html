@@ -1,0 +1,18 @@
+{% extends 'viewer/page_bits/base.html' %}
+{% block 'body' %}
+<h1>Images</h1>
+<p>This page has all teh images</p>
+{% if images %}
+    {% for image in images %}
+        <div>
+            <div>
+                <img src='{{ image.dest_url}}'>
+            </div>
+            <div>
+                Posted on {{ image.posted_time }} by {{ image.posted_by }}
+            </div>
+            <div>&nbsp;</div>
+        </div>
+    {% endfor %}
+{% endif %}
+{% endblock %}

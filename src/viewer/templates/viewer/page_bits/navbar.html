@@ -1,0 +1,28 @@
+    <div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="brand" href="#">Viewer</a>
+          <div class="nav-collapse collapse">
+            <ul class="nav">
+              <li id="navbar_index"><a href="{% url 'viewer.views.index' %}">Home</a></li>
+              <li id="navbar_images"><a href="{% url 'viewer.views.images' %}">Images</a></li>
+              <li id="navbar_youtube"><a href="{% url 'viewer.views.youtube' %}">Youtube</a></li>
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div>
+      </div>
+    </div>
+
+    <script type='text/javascript'>
+      window.onload = function()
+      {
+        $active_class = '#navbar_{{ url_name }}';
+        console.log('Adding active class to ' + $active_class);
+        $($active_class).addClass('active');
+      }
+    </script>

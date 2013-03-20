@@ -1,0 +1,10 @@
+<div>
+<span class="label label-warning">Warning</span><span>The NSFW filter does not work yet</span>
+
+<select>
+    <option>All channels</option>
+    {% for channel in channels %}
+        <option>{{ channel }}</option>
+    {% endfor %}
+</select>
+</div>

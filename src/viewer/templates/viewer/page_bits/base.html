@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Bootstrap, from Twitter</title>
+    <title>Linkviewer</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -33,15 +33,18 @@
 
     {% include "viewer/page_bits/navbar.html" %}
     <div class="container">
-    {% block 'controls' %}
-    {% endblock %}
-  </div>
-    <div class="container">
-
-{% block 'body' %}
-{% endblock %}
-
-    </div> <!-- /container -->
+      <div class="row">
+        <div class="span10">
+            {% block 'body' %}
+            {% endblock %}
+        </div>
+        <div class="span2">
+            {% block 'controls' %}
+                {% include "viewer/page_bits/controls.html" %}
+            {% endblock %}
+        </div>
+      </div>
+    </div><!-- /container -->
 
     <!-- Le javascript
     ================================================== -->

@@ -30,7 +30,9 @@
     <script>$.endlessPaginate({paginateOnScroll: true, paginateOnScrollMargin: 100});</script>
     <script>
     function set_nsfw() {
-        if ($('#nsfw_enabled').bootstrapSwitch('status') == false) {
+        var value = $('#nsfw_enabled').bootstrapSwitch('status')
+        console.log('Setting NSFW to', value)
+        if (value == false) {
             $('.nsfw').hide();
         };
     };

@@ -4,10 +4,14 @@ register = template.Library()
 
 @register.filter
 def nsfw_class(value):
-    return "nsfw" if value else ""
+    return 'nsfw' if value else 'sfw'
 
 
 @register.filter
-def channel_class(value):
-    c = value.replace('#', '')
-    return "channel_{0}".format(c)
+def nsfw_warning(value):
+    return 'NSFW' if value else ''
+
+
+@register.filter
+def nsfw_warning_label(value):
+    return 'label label-warning' if value else ''

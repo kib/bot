@@ -1,3 +1,7 @@
 .secondary-navbar {
     margin-top: 43px;
 }
+
+.nsfw {
+    display: none;
+}

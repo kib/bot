@@ -2,8 +2,6 @@
 
 {% block controls %}
 <div>
-<span class="label label-warning">Warning</span><span>The NSFW filter does not work yet</span>
-
 
 <div id="nsfw_enabled" class="switch" data-on="danger" data-off="primary" data-on-label='NSFW' data-off-label='SFW'>
     <input type="checkbox" />
@@ -32,6 +30,7 @@
         var value = $('#nsfw_enabled').bootstrapSwitch('status')
         console.log('Setting NSFW to', value)
         if (value == false) {
+            $('.sfw').show();
             $('.nsfw').hide();
         };
     };

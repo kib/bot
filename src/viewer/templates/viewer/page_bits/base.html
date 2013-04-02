@@ -35,7 +35,7 @@
     <div class="container">
       <div class="row">
         <div class="span10">
-            {% block 'body' %}
+            {% block body %}
             {% endblock %}
         </div>
         <div class="span2">
@@ -49,7 +49,9 @@
     <!-- Le javascript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
+    {% block js %}
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" ></script>
     <script src="/assets/bootstrap/js/bootstrap.js"></script>
+    {% endblock %}
   </body>
 </html>

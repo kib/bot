@@ -1,0 +1,11 @@
+{% extends 'viewer/page_bits/base.html' %}
+
+{% block body %}
+{% include 'viewer/images/page.html' %}
+{% endblock %}
+
+{% block js %}
+    {{ block.super }}
+    <script src="{{ STATIC_URL }}endless_pagination/js/endless-pagination.js"></script>
+    <script>$.endlessPaginate({paginateOnScroll: true});</script>
+{% endblock %}

@@ -5,3 +5,4 @@ from image import *
 from link import *
 from hoi import *
 from video import *
+from bitcoin import *

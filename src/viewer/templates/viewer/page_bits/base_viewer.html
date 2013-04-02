@@ -27,7 +27,6 @@
     {{ block.super }}
     <script src="{{ STATIC_URL }}js/bootstrapSwitch.js"></script>
     <script src="{{ STATIC_URL }}endless_pagination/js/endless-pagination.js"></script>
-    <script>$.endlessPaginate({paginateOnScroll: true, paginateOnScrollMargin: 100});</script>
     <script>
     function set_nsfw() {
         var value = $('#nsfw_enabled').bootstrapSwitch('status')
@@ -50,6 +49,9 @@
     <script src="{{ STATIC_URL }}endless_pagination/js/endless-pagination.js"></script>
     <script>$.endlessPaginate({
         paginateOnScroll: true, 
-        paginateOnScrollMargin: 100,
-        onCompleted: set_nsfw()});</script>
+        paginateOnScrollMargin: 10,
+        onCompleted: function(data) {
+            console.log('New entries loaded, setting nsfw status');
+            set_nsfw();
+        }});</script>
 {% endblock %}

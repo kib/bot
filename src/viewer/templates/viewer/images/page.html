@@ -1,9 +1,10 @@
 {% load endless %}
+{% load viewer_tags %}
 
 {% paginate images %}
 
 {% for image in images %}
-    <div>
+    <div class='image {{ image.nsfw|nsfw_class }}'>
         <div>
             <img src='{{ image.dest_url}}'>
         </div>

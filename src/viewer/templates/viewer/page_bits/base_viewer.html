@@ -1,0 +1,53 @@
+{% extends 'viewer/page_bits/base.html' %}
+
+{% block controls %}
+<div>
+<span class="label label-warning">Warning</span><span>The NSFW filter does not work yet</span>
+
+
+<div id="nsfw_enabled" class="switch" data-on="danger" data-off="primary" data-on-label='NSFW' data-off-label='SFW'>
+    <input type="checkbox" />
+</div>
+
+<select>
+    <option>All channels</option>
+    {% for channel in channels %}
+        <option>{{ channel }}</option>
+    {% endfor %}
+</select>
+</div>
+{% endblock %}
+
+{% block css %}
+    {{ block.super }}
+    <link href="{{ STATIC_URL}}css/bootstrapSwitch.css" rel="stylesheet">
+{% endblock %}
+
+{% block js %}
+    {{ block.super }}
+    <script src="{{ STATIC_URL }}js/bootstrapSwitch.js"></script>
+    <script src="{{ STATIC_URL }}endless_pagination/js/endless-pagination.js"></script>
+    <script>$.endlessPaginate({paginateOnScroll: true, paginateOnScrollMargin: 100});</script>
+    <script>
+    function set_nsfw() {
+        if ($('#nsfw_enabled').bootstrapSwitch('status') == false) {
+            $('.nsfw').hide();
+        };
+    };
+    $('#nsfw_enabled').on('switch-change', function (e, data) {
+        var value = data.value;
+        console.log('NSFW', value);
+        if (value) {
+            $('.nsfw').show();
+        } else {
+            $('.nsfw').hide();
+        }
+    });
+    set_nsfw();
+    </script>
+    <script src="{{ STATIC_URL }}endless_pagination/js/endless-pagination.js"></script>
+    <script>$.endlessPaginate({
+        paginateOnScroll: true, 
+        paginateOnScrollMargin: 100,
+        onCompleted: set_nsfw()});</script>
+{% endblock %}

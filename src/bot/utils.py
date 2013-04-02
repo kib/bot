@@ -4,7 +4,7 @@ from yardbird.irc import IRCResponse
 
 def parse_request(request):
     '''Returns some basic properties of the request'''
-    return (request.reply_recipient, request.nick, request.message)
+    return (request.reply_recipient.lower(), request.nick, request.message)
 
 def fix_url(url):
     '''If the url does not start with http:// or https://, prepends http://'''

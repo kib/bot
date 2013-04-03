@@ -9,7 +9,7 @@ def nsfw_class(value):
 
 @register.filter
 def nsfw_warning(value):
-    return 'NSFW' if value else ''
+    return 'NSFW, click to show/hide' if value else ''
 
 
 @register.filter

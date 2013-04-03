@@ -4,14 +4,13 @@
 {% paginate images %}
 
 {% for image in images %}
-    <div id='image_{{ image.id }}' class='image {{ image.nsfw|nsfw_class }}' data-channel='{{ image.posted_channel }}' data-poster='{{ image.posted_by }}' data-id='{{ image.id }}' data-time='{{ image.posted_time }}'>
+    <div id='image_{{ image.id }}' class='image_outer {{ image.nsfw|nsfw_class }}' data-channel='{{ image.posted_channel }}' data-poster='{{ image.posted_by }}' data-id='{{ image.id }}' data-time='{{ image.posted_time }}'>
         <div class='nsfw_warning {{ image.nsfw|nsfw_warning_label }}'>{{ image.nsfw|nsfw_warning }}</div>
         <div class='image_container'>
             <img src='{{ image.dest_url }}'>
         </div>
         <div class='spacer'>&nbsp;</div>
         <div class='context'>[{{ image.posted_time|format_datetime }}] &lt;{{ image.posted_by }}&gt; {{ image.message|strip_url }}</div>
-        <!--<div class='image_meta'>Posted on {{ image.posted_time }} by {{ image.posted_by }}</div>-->
         <div class='spacer'>&nbsp;</div>
     </div>
 {% endfor %}

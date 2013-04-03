@@ -10,3 +10,10 @@
     width: 100%;
     margin-right: 20em;
 }
+
+.context {
+    font-family: monospace;
+    font-weight: bold;
+    background-color: #000;
+    color: #fff;
+}

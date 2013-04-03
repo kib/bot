@@ -10,7 +10,8 @@
             <img src='{{ image.dest_url }}'>
         </div>
         <div class='spacer'>&nbsp;</div>
-        <div class='image_meta'>Posted on {{ image.posted_time }} by {{ image.posted_by }}</div>
+        <div class='context'>[{{ image.posted_time|format_datetime }}] &lt;{{ image.posted_by }}&gt; {{ image.message|strip_url }}</div>
+        <!--<div class='image_meta'>Posted on {{ image.posted_time }} by {{ image.posted_by }}</div>-->
         <div class='spacer'>&nbsp;</div>
     </div>
 {% endfor %}

@@ -17,6 +17,6 @@ def bitcoin(request):
     w_avg = decoded['avg']['display']
     vol = decoded['vol']['display']
 
-    response = u'[ last: {} - high: {} - low: {} - w_avg: {} - volume: {} ]'.format(last, high, low, w_avg, vol)
+    response = u'[ last: {0} - high: {1} - low: {2} - w_avg: {3} - volume: {4} ]'.format(last, high, low, w_avg, vol)
 
     return IRCResponse(c, response)

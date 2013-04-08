@@ -1,5 +1,6 @@
 {% load endless %}
 {% load viewer_tags %}
+{% load tz %}
 
 {% paginate images %}
 
@@ -10,7 +11,7 @@
             <img src='{{ image.dest_url }}'>
         </div>
         <div class='spacer'>&nbsp;</div>
-        <div class='context'>[{{ image.posted_time|format_datetime }}] &lt;{{ image.posted_by }}&gt; {{ image.message|strip_url }}</div>
+        <div class='context'>[{{ image.posted_time|localtime|format_datetime }}] &lt;{{ image.posted_by }}&gt; {{ image.message|strip_url }}</div>
         <div class='spacer'>&nbsp;</div>
     </div>
 {% endfor %}

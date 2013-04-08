@@ -23,6 +23,7 @@ $.endlessPaginate({
     paginateOnScrollMargin: 10,
     onCompleted: function(data) {
         console.log('New entries loaded, setting nsfw status');
+        $('.nsfw').show();
         set_nsfw();
 }});
 

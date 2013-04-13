@@ -131,7 +131,6 @@ INSTALLED_APPS = (
     'django_nose',
     'south',
     'yardbird',
-    'bootstrap_toolkit',
     'endless_pagination',
     'viewer',
 )

@@ -9,7 +9,7 @@ def civ5(request):
     game_ids = ['10774','10775']
     base_url = 'http://multiplayerrobot.com/Game/Details?id='
     for i in game_ids:
-        data = requests.post(game_url + i, headers={'Content-Length': '0'})
+        data = requests.post(base_url + i, headers={'Content-Length': '0'})
         if data.status_code != 200:
             return IRCResponse(d, 'Unable to fetch game data')
 

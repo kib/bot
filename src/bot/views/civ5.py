@@ -8,14 +8,16 @@ def civ5(request):
     d = request.reply_recipient
     game_ids = ['10774','10775']
     base_url = 'http://multiplayerrobot.com/Game/Details?id='
+    active_player = []
+    turn_timer = []
+    j = 0
     for i in game_ids:
         data = requests.post(base_url + i, headers={'Content-Length': '0'})
         if data.status_code != 200:
             return IRCResponse(d, 'Unable to fetch game data')
-
         soup = BeautifulSoup(data.text)
+        active_player.append(soup.find(class_='game-host').find(class_='avatar').attrs['title'])
+        turn_timer.append(soup.find(id='turn-timer-container').find('strong').string)
+        response = "Game " + i +": Active player: " + active_player(j) + ", turn ends turn_timer(j) + "\n
+return IRCResponse(d,response)
 
-        active_player = soup.find(class_='game-host').find(class_='avatar').attrs['title']
-        turn_timer = soup.find(id='turn-timer-container').find('strong').string
-
-        return IRCResponse(d, "Active player: {0}, turn ends: {1}".format(active_player, turn_timer))

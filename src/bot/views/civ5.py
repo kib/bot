@@ -15,6 +15,6 @@ def civ5(request):
         soup = BeautifulSoup(data.text)
 	active_player = soup.find(class_='game-host').find(class_='avatar').attrs['title']
 	turn_timer = soup.find(id='turn-timer-container').find('strong').string        
-	response += "Game " + i +": Active player: " + active_player + ", turn ends turn_timer \n "
+ 	response += "Game %s: Active player: %s, turn ends: %s\n" % (i, active_player, turn_timer)    
 return IRCResponse(d,response)
 

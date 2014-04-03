@@ -13,8 +13,8 @@ def civ5(request):
         if data.status_code != 200:
             return IRCResponse(d, 'Unable to fetch game data')
         soup = BeautifulSoup(data.text)
-	active_player = soup.find(class_='game-host').find(class_='avatar').attrs['title']
-	turn_timer = soup.find(id='turn-timer-container').find('strong').string        
- 	response += "Game %s: Active player: %s, turn ends: %s\n" % (i, active_player, turn_timer)    
-return IRCResponse(d,response)
+        active_player = soup.find(class_='game-host').find(class_='avatar').attrs['title']
+        turn_timer = soup.find(id='turn-timer-container').find('strong').string        
+        response += "Game %s: Active player: %s, turn ends: %s\n" % (i, active_player, turn_timer)    
+    return IRCResponse(d,response)
 

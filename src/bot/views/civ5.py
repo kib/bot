@@ -6,7 +6,7 @@ import requests
 
 def civ5(request):
     d = request.reply_recipient
-    game_ids = ['10774','10775','14878']
+    game_ids = ['10774','10775']
     base_url = 'http://multiplayerrobot.com/Game#'
     response = ""
     for i in game_ids:
